@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Home() {
+export default function Services() {
   return (
     <main>
       <h1>
-        Bentley Chiropractic
+        Services
       </h1>
     </main>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Home() {
+export default function Testimonials() {
   return (
     <main>
       <h1>
-        Bentley Chiropractic
+        Testimonials
       </h1>
     </main>
   );
