@@ -35,7 +35,7 @@ export const Nav: React.FC<NavProps> = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay" />
-          <ul className="menu p-4 w-80 min-h-full bg-background text-primary-text">
+          <ul className="menu p-4 w-80 min-h-full bg-background text-blackbeard">
             {/* Sidebar content here */}
             {navLinks.map((navLink) => (
               <li key={navLink.name}>

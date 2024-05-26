@@ -10,7 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         background: '#F0E8E5',
-        'primary-text': '#1E1E1E',
+        'background-light': '#F4F3F2',
+        primary: '#0E258B',
+        'primary-dark': '#0C1F74',
+        secondary: '#D2D2E9',
+        'secondary-dark': '#A2B1F6',
+        'blackbeard': '#1E1E1E',
       },
       fontFamily: {
         heading: 'var(--font-heading)',

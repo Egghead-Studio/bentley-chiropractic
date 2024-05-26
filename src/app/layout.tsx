@@ -26,7 +26,7 @@ export default function RootLayout({
           radioCanada.className,
           radioCanada.variable,
           lora.variable,
-          'min-h-screen bg-background text-primary-text md:text-lg'
+          'min-h-screen bg-background text-blackbeard md:text-lg'
         )
       }
       >
