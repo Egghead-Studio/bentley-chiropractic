@@ -1,10 +1,11 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { Inter, Lora, Radio_Canada } from 'next/font/google'
+import { Lora, Radio_Canada } from 'next/font/google'
 import './globals.css'
 import { Nav } from '@/components/Nav/Nav'
 import clsx from 'clsx'
 import { NextFontWithVariable } from 'next/dist/compiled/@next/font'
+import { AnalyticsProvider } from '@/events/AnalyticsProvider'
 
 const lora: NextFontWithVariable = Lora({ subsets: ['latin'], variable: '--font-heading' })
 const radioCanada: NextFontWithVariable = Radio_Canada({ subsets: ['latin'], variable: '--font-body' })
@@ -30,10 +31,12 @@ export default function RootLayout({
         )
       }
       >
-        <Nav/>
-        <div className={'m-4 md:mx-auto md:w-10/12 md:my-8 lg:w-9/12 lg:my-12'}>
-          {children}
-        </div>
+        <AnalyticsProvider>
+          <Nav/>
+          <div className={'m-4 md:mx-auto md:w-10/12 md:my-8 lg:w-9/12 lg:my-12'}>
+            {children}
+          </div>
+        </AnalyticsProvider>
       </body>
     </html>
   )
