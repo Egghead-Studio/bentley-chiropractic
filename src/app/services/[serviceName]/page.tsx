@@ -1,15 +1,30 @@
-'use client'
-import React from 'react';
-import {useParams} from "next/navigation";
-import {Nav} from "@/components/Nav/Nav";
+import React from 'react'
+import { AnalyticsClient } from '@/events/AnalyticsClient'
+import { EventName } from '@/events/types'
+import { getSessionInfo } from '@/events/session'
 
-export default function ServicePage() {
-  const {serviceName} = useParams();
+interface PageParams {
+  serviceName: string
+}
+
+export default async function ServicePage({ params }: { params: PageParams }) {
+  const { serviceName } = params
+  const analyticsClient = new AnalyticsClient()
+
+  const { ip, sessionID } = await getSessionInfo()
+  analyticsClient.track({
+    name: EventName.PageViewEvent, properties: {
+      distinct_id: sessionID,
+      path: `/services/${serviceName}`,
+      ip
+    }
+  })
+
   return (
     <main>
       <h1>
-        {serviceName}
+        {serviceName[0].toUpperCase() + serviceName.slice(1)}
       </h1>
     </main>
-  );
+  )
 }
