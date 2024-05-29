@@ -1,18 +1,11 @@
-import { UUID } from 'crypto'
+'use server'
+import { AnalyticsClient } from '@/events/AnalyticsClient'
+import { AnalyticsEvent } from '@/events/types'
 
-export enum EventName {
-  PageViewEvent = 'page_view',
-  ClickEvent = 'button_click',
-  ViewEvent = 'view_event',
-}
-
-export interface EventProperties {
-  distinct_id: string
-  path: string
-  ip?: string
-}
-
-export interface AnalyticsEvent {
-  name: EventName
-  properties: EventProperties
+// This is a server action which can be called by Client components.
+// It sends an event to the analytics provider from the server, therefby
+// bypassing any client-side blockers.
+export const sendEventFromClient = async (event: AnalyticsEvent) => {
+  const client = new AnalyticsClient()
+  client.track(event)
 }

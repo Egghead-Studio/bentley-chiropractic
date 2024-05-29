@@ -1,22 +1,38 @@
 'use client'
 import React from 'react'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
-import { Singleton } from '@/utils/Singleton'
-
-interface AnalyticsStore {
-  client?: AnalyticsClient
-}
+import { usePathname } from 'next/navigation'
+import { EventProperties } from '@/events/types'
 
 interface AnalyticsProviderProps {
-  children: React.ReactNode
+  sessionID: string
+  ip: string
+  children: React.ReactNode,
 }
 
-export const AnalyticsContext = React.createContext<AnalyticsStore>({ client: undefined })
+export interface AnalyticsStore {
+  sessionID: string
+  ip: string
+  getEventProperties: () => EventProperties
+}
 
-export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({ children }) => {
-  const analyticsClient: Singleton<AnalyticsClient> = new Singleton('analyticsClient')
+const defaultGetProperties = () => ({
+  distinct_id: '',
+  path: '',
+  ip: '',
+})
+
+export const AnalyticsContext: React.Context<AnalyticsStore> = React.createContext<AnalyticsStore>({
+  sessionID: '',
+  ip: '',
+  getEventProperties: defaultGetProperties
+})
+
+export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({ sessionID, ip, children }) => {
+  const path = usePathname()
+  const getEventProperties = () => ({ ip, path, distinct_id: sessionID })
+
   return (
-    <AnalyticsContext.Provider value={{ client: analyticsClient.value }}>
+    <AnalyticsContext.Provider value={{ ip, sessionID, getEventProperties }}>
       {children}
     </AnalyticsContext.Provider>
   )

@@ -1,7 +1,9 @@
 'use client'
-import React from 'react'
-import Link from 'next/link'
+import React, { useContext, useEffect } from 'react'
 import { Menu } from 'react-feather'
+import { AnalyticsContext } from '@/events/AnalyticsProvider'
+import { EventName } from '@/events/types'
+import { sendEventFromClient } from '@/events/events'
 
 
 interface NavProps {
@@ -9,6 +11,7 @@ interface NavProps {
 }
 
 export const Nav: React.FC<NavProps> = () => {
+  const { getEventProperties } = useContext(AnalyticsContext)
   const navLinks = [
     {
       name: 'Services',
@@ -23,6 +26,12 @@ export const Nav: React.FC<NavProps> = () => {
       url: '/testimonials'
     }
   ]
+
+  useEffect(() => {
+    const eventProps = getEventProperties()
+    void sendEventFromClient({ name: EventName.ViewEvent, properties: { ...eventProps, item: 'nav-bar' } })
+  }, [])
+
   return (
     <nav>
       <div className="drawer drawer-end bg-background">
@@ -39,7 +48,7 @@ export const Nav: React.FC<NavProps> = () => {
             {/* Sidebar content here */}
             {navLinks.map((navLink) => (
               <li key={navLink.name}>
-                <a href={navLink.url}> {navLink.name} </a>
+                <a href={navLink.url}>{navLink.name}</a>
               </li>
             ))}
           </ul>

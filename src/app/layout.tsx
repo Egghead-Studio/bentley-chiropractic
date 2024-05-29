@@ -6,6 +6,8 @@ import { Nav } from '@/components/Nav/Nav'
 import clsx from 'clsx'
 import { NextFontWithVariable } from 'next/dist/compiled/@next/font'
 import { AnalyticsProvider } from '@/events/AnalyticsProvider'
+import { getSessionInfo } from '@/events/session'
+import { AnalyticsClient } from '@/events/AnalyticsClient'
 
 const lora: NextFontWithVariable = Lora({ subsets: ['latin'], variable: '--font-heading' })
 const radioCanada: NextFontWithVariable = Radio_Canada({ subsets: ['latin'], variable: '--font-body' })
@@ -15,11 +17,13 @@ export const metadata: Metadata = {
   description: 'Book Your Appointment Today!',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { ip, sessionID } = await getSessionInfo()
+
   return (
     <html lang="en">
       <body className={
@@ -31,7 +35,7 @@ export default function RootLayout({
         )
       }
       >
-        <AnalyticsProvider>
+        <AnalyticsProvider ip={ip} sessionID={sessionID}>
           <Nav/>
           <div className={'m-4 md:mx-auto md:w-10/12 md:my-8 lg:w-9/12 lg:my-12'}>
             {children}

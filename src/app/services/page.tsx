@@ -1,13 +1,14 @@
 import React from 'react'
 import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { getIP } from '@/utils/ip'
-import { EventName } from '@/events/events'
+import { EventName } from '@/events/types'
+import { getSessionInfo } from '@/events/session'
 
-export default function Services() {
+export default async function Services() {
   const analyticsClient = new AnalyticsClient()
 
-  const ip = getIP()
-  analyticsClient.track({ name: EventName.PageViewEvent, properties: { distinct_id: ip, path: '/services', ip } })
+  const { ip, sessionID } = await getSessionInfo()
+  analyticsClient.track({ name: EventName.PageViewEvent, properties: { distinct_id: sessionID, path: '/services', ip } })
 
   return (
     <main>
