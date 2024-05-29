@@ -51,7 +51,7 @@ export const Nav: React.FC<NavProps> = () => {
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex items-center py-2 px-4 md:px-0 md:mx-auto md:w-10/12 lg:w-9/12">
           <a href={'/'}>
-            <div className={'text-3xl font-heading font-bold'}>Bentley Chiropractic</div>
+            <div className={'text-2xl lg:text-3xl font-heading font-bold'}>Bentley Chiropractic</div>
           </a>
           <div className={'hidden lg:flex gap-4 ml-auto list-none'}>
             <NavLinks />
