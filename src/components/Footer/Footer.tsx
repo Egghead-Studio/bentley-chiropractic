@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
                 <div className={'flex gap-2'}>
                   <a href={'https://maps.app.goo.gl/iKxuYJpq1yQLiKXn7'} target={'_blank'} className={'text-primary underline'}>Google Maps</a>
               |
-                  <a href={'https://maps.app.goo.gl/iKxuYJpq1yQLiKXn7'} target={'_blank'} className={'text-primary underline'}>Apple Maps</a>
+                  <a href={'https://maps.apple.com/?address=11705%20Gravois%20Rd,%20Saint%20Louis,%20MO%20%2063127,%20United%20States&auid=4694201589142238798&ll=38.532812,-90.385496&lsp=9902&q=Bentley%20Chiropractic'} target={'_blank'} className={'text-primary underline'}>Apple Maps</a>
                 </div>
               </div>
 
