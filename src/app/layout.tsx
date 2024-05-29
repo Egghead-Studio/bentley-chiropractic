@@ -8,6 +8,7 @@ import { NextFontWithVariable } from 'next/dist/compiled/@next/font'
 import { AnalyticsProvider } from '@/events/AnalyticsProvider'
 import { getSessionInfo } from '@/events/session'
 import { AnalyticsClient } from '@/events/AnalyticsClient'
+import { Footer } from '@/components/Footer/Footer'
 
 const lora: NextFontWithVariable = Lora({ subsets: ['latin'], variable: '--font-heading' })
 const radioCanada: NextFontWithVariable = Radio_Canada({ subsets: ['latin'], variable: '--font-body' })
@@ -31,7 +32,7 @@ export default async function RootLayout({
           radioCanada.className,
           radioCanada.variable,
           lora.variable,
-          'min-h-screen bg-background text-blackbeard md:text-lg'
+          'min-h-screen bg-background text-blackbeard lg:text-lg'
         )
       }
       >
@@ -40,6 +41,7 @@ export default async function RootLayout({
           <div className={'m-4 md:mx-auto md:w-10/12 md:my-8 lg:w-9/12 lg:my-12'}>
             {children}
           </div>
+          <Footer />
         </AnalyticsProvider>
       </body>
     </html>
