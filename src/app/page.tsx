@@ -3,6 +3,7 @@ import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
 import { getSessionInfo } from '@/events/session'
 import { HeroSection } from '@/components/HeroSection/HeroSection'
+import { FAQSection } from '@/components/FAQ/FAQ'
 
 export default async function Home() {
   const analyticsClient = new AnalyticsClient()
@@ -13,6 +14,7 @@ export default async function Home() {
     <main>
       <h1>
         <HeroSection />
+        <FAQSection />
       </h1>
     </main>
   )
