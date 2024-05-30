@@ -5,6 +5,7 @@ import { getSessionInfo } from '@/events/session'
 import { HeroSection } from '@/components/HeroSection/HeroSection'
 import { FAQSection } from '@/components/FAQ/FAQ'
 import { WhatToExpect } from '@/components/WhatToExpect/WhatToExpect'
+import { HowICanHelp } from '@/components/HowICanHelp/HowICanHelp'
 
 export default async function Home() {
   const analyticsClient = new AnalyticsClient()
@@ -14,8 +15,9 @@ export default async function Home() {
   return (
     <main>
       <h1>
-        <HeroSection />
-        <FAQSection />
+        <HeroSection/>
+        <HowICanHelp/>
+        <FAQSection/>
       </h1>
       <WhatToExpect/>
     </main>
