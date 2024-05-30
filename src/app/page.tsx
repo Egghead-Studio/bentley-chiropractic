@@ -6,6 +6,7 @@ import { HeroSection } from '@/components/HeroSection/HeroSection'
 import { FAQSection } from '@/components/FAQ/FAQ'
 import { WhatToExpect } from '@/components/WhatToExpect/WhatToExpect'
 import { HowICanHelp } from '@/components/HowICanHelp/HowICanHelp'
+import { WhyGonsteadWorks } from '@/components/WhyGonsteadWorks/WhyGonsteadWorks'
 
 export default async function Home() {
   const analyticsClient = new AnalyticsClient()
@@ -17,6 +18,7 @@ export default async function Home() {
       <div>
         <HeroSection/>
         <HowICanHelp/>
+        <WhyGonsteadWorks/>
         <FAQSection/>
       </div>
       <WhatToExpect/>
