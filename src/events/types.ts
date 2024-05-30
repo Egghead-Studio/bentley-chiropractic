@@ -2,6 +2,7 @@ export enum EventName {
   PageViewEvent = 'page_view',
   ClickEvent = 'button_click',
   ViewEvent = 'view_event',
+  BookAppointment = 'book_appointment',
 }
 
 export interface EventProperties {
