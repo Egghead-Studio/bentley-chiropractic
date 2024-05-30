@@ -7,7 +7,7 @@ export enum ButtonVariant {
   Icon = 'icon',
 }
 
-interface ButtonProps {
+export interface ButtonProps {
   children: React.ReactNode
   onClick?: () => void
   variant?: ButtonVariant

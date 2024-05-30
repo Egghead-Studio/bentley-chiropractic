@@ -2,6 +2,7 @@ import React from 'react'
 import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
 import { getSessionInfo } from '@/events/session'
+import { HeroSection } from '@/components/HeroSection/HeroSection'
 
 export default async function Home() {
   const analyticsClient = new AnalyticsClient()
@@ -11,7 +12,7 @@ export default async function Home() {
   return (
     <main>
       <h1>
-        Bentley Chiropractic
+        <HeroSection />
       </h1>
     </main>
   )
