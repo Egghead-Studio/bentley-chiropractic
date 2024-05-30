@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
 
   return (
     <div className={'bg-secondary py-8 lg:py-12'}>
-      <div className={'flex flex-col lg:flex-row gap-8 mx-4 md:mx-auto md:w-10/12 lg:w-9/12'}>
+      <div className={'flex flex-col lg:flex-row gap-8 w-page'}>
         {/* Left Side */}
         <div className={'flex flex-col gap-8 justify-start flex-shrink-0 lg:w-6/12'}>
           <div className={'flex flex-col gap-4'}>

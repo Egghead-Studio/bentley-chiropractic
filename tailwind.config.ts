@@ -1,4 +1,13 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+
+// Define types for the plugin function arguments
+interface PluginAPI {
+  // eslint-disable-next-line no-unused-vars
+  addUtilities: (utilities: Record<string, any>, options?: { variants?: string[] }) => void;
+  // eslint-disable-next-line no-unused-vars
+  theme: (path: string, defaultValue?: any) => any;
+}
 
 const config: Config = {
   content: [
@@ -22,11 +31,29 @@ const config: Config = {
         sans: 'var(--font-body)',
         body: 'var(--font-body)',
         mono: 'var(--font-body)',
-      }
+      },
     },
   },
   plugins: [
-    require('daisyui')
+    require('daisyui'),
+    plugin(function ({ addUtilities, theme }: PluginAPI) {
+      addUtilities({
+        '.w-page': {
+          '@screen sm': {
+            marginLeft: theme('spacing.4'),
+            marginRight: theme('spacing.4')
+          },
+          '@screen md': {
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            maxWidth: theme('width.10/12'),
+          },
+          '@screen lg': {
+            maxWidth: theme('width.9/12'),
+          },
+        },
+      })
+    })
   ],
 }
 export default config
