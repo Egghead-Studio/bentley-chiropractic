@@ -14,11 +14,11 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>
+      <div>
         <HeroSection/>
         <HowICanHelp/>
         <FAQSection/>
-      </h1>
+      </div>
       <WhatToExpect/>
     </main>
   )
