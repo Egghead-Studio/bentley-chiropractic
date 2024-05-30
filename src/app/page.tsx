@@ -3,6 +3,7 @@ import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
 import { getSessionInfo } from '@/events/session'
 import { HeroSection } from '@/components/HeroSection/HeroSection'
+import { WhatToExpect } from '@/components/WhatToExpect/WhatToExpect'
 
 export default async function Home() {
   const analyticsClient = new AnalyticsClient()
@@ -14,6 +15,7 @@ export default async function Home() {
       <h1>
         <HeroSection />
       </h1>
+      <WhatToExpect/>
     </main>
   )
 }
