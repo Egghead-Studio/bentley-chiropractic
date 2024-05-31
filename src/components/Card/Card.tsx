@@ -9,8 +9,8 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ headerText, bodyText, learnMoreLink, review }) => {
   return (
-    <div className={'shadow-md rounded-lg w-full bg-background-light p-10'}>
-      <div className={' flex justify-between text-primary text-2xl font-bold font-heading my-4'}>
+    <div className={'shadow-md rounded-lg w-full bg-background-light p-10 lg:max-w-[30vw] xl:max-w-[25vw]'}>
+      <div className={'flex flex-col items-center lg:flex-row justify-between text-left text-primary text-2xl gap-4 font-bold font-heading my-4'}>
         <div className={'w-min border-b-2 border-secondary-dark text-nowrap'}>
           {headerText}
         </div>

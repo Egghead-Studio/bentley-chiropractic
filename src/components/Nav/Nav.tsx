@@ -46,7 +46,7 @@ export const Nav: React.FC<NavProps> = () => {
   }, [])
 
   return (
-    <nav className={'w-page'}>
+    <nav className={'w-page py-2 lg:py-4'}>
       <div className="drawer drawer-end bg-background">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex items-center py-2 px-4">
