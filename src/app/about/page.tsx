@@ -1,6 +1,5 @@
 import React from 'react'
 import { AnalyticsClient } from '@/events/AnalyticsClient'
-import { getIP } from '@/utils/ip'
 import { EventName } from '@/events/types'
 import { getSessionInfo } from '@/events/session'
 

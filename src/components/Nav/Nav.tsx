@@ -1,9 +1,6 @@
 'use client'
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { Menu } from 'react-feather'
-import { AnalyticsContext } from '@/events/AnalyticsProvider'
-import { EventName } from '@/events/types'
-import { sendEventFromClient } from '@/events/events'
 
 
 interface NavProps {
@@ -38,13 +35,6 @@ const NavLinks: React.FC = () => {
 
 
 export const Nav: React.FC<NavProps> = () => {
-  const { getEventProperties } = useContext(AnalyticsContext)
-
-  useEffect(() => {
-    const eventProps = getEventProperties()
-    void sendEventFromClient({ name: EventName.ViewEvent, properties: { ...eventProps, item: 'nav-bar' } })
-  }, [])
-
   return (
     <nav className={'w-page py-2 lg:py-4'}>
       <div className="drawer drawer-end bg-background">

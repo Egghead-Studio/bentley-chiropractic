@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import { NextFontWithVariable } from 'next/dist/compiled/@next/font'
 import { AnalyticsProvider } from '@/events/AnalyticsProvider'
 import { getSessionInfo } from '@/events/session'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { Footer } from '@/components/Footer/Footer'
 
 const lora: NextFontWithVariable = Lora({ subsets: ['latin'], variable: '--font-heading' })

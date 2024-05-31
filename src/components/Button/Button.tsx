@@ -2,8 +2,11 @@ import React from 'react'
 import clsx from 'clsx'
 
 export enum ButtonVariant {
+  // eslint-disable-next-line no-unused-vars
   Primary = 'primary',
+  // eslint-disable-next-line no-unused-vars
   Secondary = 'secondary',
+  // eslint-disable-next-line no-unused-vars
   Icon = 'icon',
 }
 

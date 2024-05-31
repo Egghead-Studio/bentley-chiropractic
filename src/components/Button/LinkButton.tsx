@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Button, ButtonProps } from '@/components/Button/Button'
-import { AnalyticsEvent, EventName } from '@/events/types'
+import { EventName } from '@/events/types'
 import { sendEvent } from '@/events/events'
 
 interface LinkButtonProps extends ButtonProps {
