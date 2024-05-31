@@ -11,13 +11,13 @@ interface LinkButtonProps extends ButtonProps {
   children: React.ReactNode;
 }
 
-export const LinkButton: React.FC<LinkButtonProps> = ({ href, eventName, eventProperties, variant, children }) => {
+export const LinkButton: React.FC<LinkButtonProps> = ({ href, eventName, eventProperties, variant, stretch, children }) => {
   const onClick = () => {
     void sendEvent(eventName, eventProperties)
     window.open(href, '_blank')
   }
 
   return (
-    <Button variant={variant} onClick={onClick}>{children}</Button>
+    <Button variant={variant} stretch={stretch} onClick={onClick}>{children}</Button>
   )
 }

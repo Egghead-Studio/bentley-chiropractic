@@ -1,6 +1,9 @@
 'use client'
 import React from 'react'
 import { Menu } from 'react-feather'
+import { LinkButton } from '@/components/Button/LinkButton'
+import { EventName } from '@/events/types'
+import { ExternalURL } from '@/urls'
 
 
 interface NavProps {
@@ -39,11 +42,11 @@ export const Nav: React.FC<NavProps> = () => {
     <nav className={'w-page py-2 lg:py-4'}>
       <div className="drawer drawer-end bg-background">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex items-center py-2 px-4">
+        <div className="drawer-content flex items-center py-2">
           <a href={'/'}>
-            <div className={'text-2xl lg:text-3xl font-heading font-bold'}>Bentley Chiropractic</div>
+            <div className={'text-2xl lg:text-3xl text-primary font-heading font-bold'}>Bentley Chiropractic</div>
           </a>
-          <div className={'hidden lg:flex gap-4 ml-auto list-none'}>
+          <div className={'hidden lg:flex gap-4 ml-auto list-none font-semibold'}>
             <NavLinks />
             <li>
               <a href={'https://maps.app.goo.gl/iKxuYJpq1yQLiKXn7'} target={'_blank'}>Location</a>
@@ -53,11 +56,21 @@ export const Nav: React.FC<NavProps> = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay" />
-          <ul className="menu p-4 w-80 min-h-full bg-background text-blackbeard">
+          <ul className="menu p-4 w-80 min-h-full bg-background text-blackbeard text-lg font-semibold">
             {/* Sidebar content here */}
             <NavLinks />
             <li>
               <a href={'https://maps.app.goo.gl/iKxuYJpq1yQLiKXn7'} target={'_blank'}>Location</a>
+            </li>
+            <li className={'pl-4 pr-8 mt-12'}>
+              <LinkButton
+                stretch
+                href={ExternalURL.Booking}
+                eventName={EventName.BookAppointment}
+                eventProperties={{ item: 'nav-bar' }}
+              >
+                Book Now
+              </LinkButton>
             </li>
           </ul>
         </div>

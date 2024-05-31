@@ -13,11 +13,22 @@ export enum ButtonVariant {
 export interface ButtonProps {
   children: React.ReactNode
   onClick?: () => void
+  stretch?: boolean
   variant?: ButtonVariant
 }
 
-export const Button: React.FC<ButtonProps> = ({ onClick = () => {}, variant = ButtonVariant.Primary, children }) => {
+export const Button: React.FC<ButtonProps> = ({
+  onClick = () => {},
+  variant = ButtonVariant.Primary,
+  stretch,
+  children
+}) => {
   let className = 'btn-primary bg-primary text-white'
+  let widthClass = 'max-w-min'
+
+  if (stretch) {
+    widthClass = 'w-full'
+  }
 
   if (variant === ButtonVariant.Secondary) {
     className = 'btn-secondary bg-secondary text-blackbeard'
@@ -28,7 +39,7 @@ export const Button: React.FC<ButtonProps> = ({ onClick = () => {}, variant = Bu
   }
 
   return (
-    <button className={clsx('btn max-w-min text-nowrap', className)} onClick={onClick}>
+    <button className={clsx('btn text-nowrap', className, widthClass)} onClick={onClick}>
       {children}
     </button>
   )
