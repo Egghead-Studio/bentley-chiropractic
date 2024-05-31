@@ -6,6 +6,7 @@ import { HeroSection } from '@/components/HeroSection/HeroSection'
 import { FAQSection } from '@/components/FAQ/FAQ'
 import { WhatToExpect } from '@/components/WhatToExpect/WhatToExpect'
 import { HowICanHelp } from '@/components/HowICanHelp/HowICanHelp'
+import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTestimonials'
 import { WhyGonsteadWorks } from '@/components/WhyGonsteadWorks/WhyGonsteadWorks'
 
 export default async function Home() {
@@ -18,10 +19,11 @@ export default async function Home() {
       <div>
         <HeroSection/>
         <HowICanHelp/>
+        <WhatToExpect/>
+        <PatientTestimonials/>
         <WhyGonsteadWorks/>
         <FAQSection/>
       </div>
-      <WhatToExpect/>
     </main>
   )
 }
