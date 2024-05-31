@@ -39,10 +39,9 @@ const config: Config = {
     plugin(function ({ addUtilities, theme }: PluginAPI) {
       addUtilities({
         '.w-page': {
-          '@screen sm': {
-            marginLeft: theme('spacing.4'),
-            marginRight: theme('spacing.4')
-          },
+          marginLeft: theme('spacing.4'),
+          marginRight: theme('spacing.4'),
+
           '@screen md': {
             marginLeft: 'auto',
             marginRight: 'auto',

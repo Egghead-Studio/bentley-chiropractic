@@ -38,7 +38,7 @@ export default async function RootLayout({
       >
         <AnalyticsProvider ip={ip} sessionID={sessionID}>
           <Nav/>
-          <div className={'my-4 md:my-8 lg:my-12'}>
+          <div>
             {children}
           </div>
           <Footer />

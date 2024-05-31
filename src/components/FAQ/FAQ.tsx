@@ -23,7 +23,7 @@ export const FAQSection: React.FC = () => {
   ]
 
   return (
-    <div className={'w-page my-12 lg:my-24 flex flex-col gap-8 md:gap-12'}>
+    <div className={'w-page py-12 lg:py-24 flex flex-col gap-8 md:gap-12'}>
       <div className={'text-primary text-4xl text-center font-bold font-heading'}>Frequently asked questions</div>
       <div className={'flex flex-col gap-4'}>
         {questions.map((q: Question, index: number) => (
