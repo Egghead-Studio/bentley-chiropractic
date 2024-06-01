@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "lint-staged": {
-    "*.(ts|tsx)": "eslint --fix",
+    "*": "npm run lint"
   },
   "husky": {
     "hooks": {
