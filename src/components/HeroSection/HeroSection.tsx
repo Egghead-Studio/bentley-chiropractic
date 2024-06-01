@@ -14,7 +14,7 @@ export const HeroSection: React.FC = async () => {
           eventName={EventName.BookAppointment}
           eventProperties={{ item: 'hero-section' }}
         >
-          Book an appointment
+          Get our new patient special
         </LinkButton>
       </div>
     </div>
