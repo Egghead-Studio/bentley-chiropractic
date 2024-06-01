@@ -13,6 +13,7 @@ const lora: NextFontWithVariable = Lora({ subsets: ['latin'], variable: '--font-
 const radioCanada: NextFontWithVariable = Radio_Canada({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
+  icons: '/bentley-logo-square.png',
   title: 'Bentley Chiropractic',
   description: 'Book Your Appointment Today!',
 }

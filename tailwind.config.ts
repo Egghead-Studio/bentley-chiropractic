@@ -5,6 +5,9 @@ import { PluginCreator } from 'tailwindcss/types/config'
 
 const customPlugin: PluginCreator = ({ addUtilities, theme }) => {
   addUtilities({
+    '.text-md': {
+      fontSize: '1rem',
+    },
     '.w-page': {
       marginLeft: theme('spacing.4'),
       marginRight: theme('spacing.4'),
