@@ -4,10 +4,6 @@ export async function middleware(req: NextRequest) {
   const requestCookies = req.cookies
   const requestHeaders = new Headers(req.headers)
 
-  // Get the user's IP address, so we can access that in headers for location
-  const ip = req.ip || ''
-  requestHeaders.set('x-forwarded-for', ip)
-
   // Create a session ID if it doesn't exist
   let sessionID = requestCookies.get('sessionID')?.value || ''
   if (!sessionID) {
