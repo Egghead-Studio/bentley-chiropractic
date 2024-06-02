@@ -1,7 +1,6 @@
 import React from 'react'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
-import { getSessionInfo } from '@/events/session'
+import { sendEvent } from '@/events/events'
 
 interface PageParams {
   serviceName: string
@@ -9,16 +8,7 @@ interface PageParams {
 
 export default async function ServicePage({ params }: { params: PageParams }) {
   const { serviceName } = params
-  const analyticsClient = new AnalyticsClient()
-
-  const { ip, sessionID } = await getSessionInfo()
-  analyticsClient.track({
-    name: EventName.PageViewEvent, properties: {
-      distinct_id: sessionID,
-      path: `/services/${serviceName}`,
-      ip
-    }
-  })
+  await sendEvent(EventName.PageViewEvent, { path: `/services/${serviceName}` })
 
   return (
     <main>

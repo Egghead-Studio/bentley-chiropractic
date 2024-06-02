@@ -1,39 +1,32 @@
 'use client'
-import React, { useContext } from 'react'
+import React from 'react'
 import { Button, ButtonVariant } from '@/components/Button/Button'
-import { sendEventFromClient } from '@/events/events'
-import { AnalyticsContext } from '@/events/AnalyticsProvider'
+import { sendEvent } from '@/events/events'
 import { EventName } from '@/events/types'
 import { Facebook, Instagram } from 'react-feather'
-import { ExternalURL } from '@/urls'
+import { ExternalURL, URLMap } from '@/urls'
 
 
 export const Footer: React.FC = () => {
-  const { getEventProperties } = useContext(AnalyticsContext)
-
   const scheduleAppointment = () => {
-    const eventProps = getEventProperties()
-    void sendEventFromClient({
-      name: EventName.ClickEvent,
-      properties: {
-        ...eventProps,
+    void sendEvent(
+      EventName.ClickEvent,
+      {
         element: 'schedule-appointment-footer',
       }
-    })
-    window.open(ExternalURL.Booking, '_blank')
+    )
+    window.open(URLMap[ExternalURL.Booking], '_blank')
   }
 
   const openSocial = (platform: ExternalURL) => {
-    const eventProps = getEventProperties()
-    void sendEventFromClient({
-      name: EventName.ClickEvent,
-      properties: {
-        ...eventProps,
+    void sendEvent(
+      EventName.ClickEvent,
+      {
         element: `open-social-${platform}`,
       }
-    })
+    )
 
-    window.open(platform, '_blank')
+    window.open(URLMap[platform], '_blank')
   }
 
   return (

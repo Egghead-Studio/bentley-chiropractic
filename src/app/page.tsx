@@ -1,7 +1,5 @@
 import React from 'react'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
-import { getSessionInfo } from '@/events/session'
 import { HeroSection } from '@/components/HeroSection/HeroSection'
 import { FAQSection } from '@/components/FAQ/FAQ'
 import { WhatToExpect } from '@/components/WhatToExpect/WhatToExpect'
@@ -9,15 +7,14 @@ import { HowICanHelp } from '@/components/HowICanHelp/HowICanHelp'
 import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTestimonials'
 import { WhyGonsteadWorks } from '@/components/WhyGonsteadWorks/WhyGonsteadWorks'
 import { AboutMatt } from '@/components/AboutMatt/AboutMatt'
+import { sendEvent } from '@/events/events'
 
 export const metadata = {
   title: 'Bentley Chiropractic | Home',
 }
 
 export default async function Home() {
-  const analyticsClient = new AnalyticsClient()
-  const { ip, sessionID } = await getSessionInfo()
-  analyticsClient.track({ name: EventName.PageViewEvent, properties: { distinct_id: sessionID, path: '/', ip } })
+  await sendEvent(EventName.PageViewEvent, { path: '/' })
 
   const sections = [
     <HowICanHelp key={'help'} />,
