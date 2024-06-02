@@ -3,7 +3,7 @@ import React from 'react'
 import { Menu } from 'react-feather'
 import { LinkButton } from '@/components/Button/LinkButton'
 import { EventName } from '@/events/types'
-import { ExternalURL } from '@/urls'
+import { ExternalURL, URLMap } from '@/urls'
 import Image from 'next/image'
 
 
@@ -58,7 +58,7 @@ export const Nav: React.FC<NavProps> = () => {
             <li>
               <LinkButton
                 stretch
-                href={ExternalURL.Booking}
+                href={URLMap[ExternalURL.Booking]}
                 eventName={EventName.BookAppointment}
                 eventProperties={{ item: 'nav-bar' }}
               >
@@ -79,7 +79,7 @@ export const Nav: React.FC<NavProps> = () => {
             <li className={'pl-4 pr-8 mt-12'}>
               <LinkButton
                 stretch
-                href={ExternalURL.Booking}
+                href={URLMap[ExternalURL.Booking]}
                 eventName={EventName.BookAppointment}
                 eventProperties={{ item: 'nav-bar' }}
               >
