@@ -10,6 +10,10 @@ import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTes
 import { WhyGonsteadWorks } from '@/components/WhyGonsteadWorks/WhyGonsteadWorks'
 import { AboutMatt } from '@/components/AboutMatt/AboutMatt'
 
+export const metadata = {
+  title: 'Bentley Chiropractic | Home',
+}
+
 export default async function Home() {
   const analyticsClient = new AnalyticsClient()
   const { ip, sessionID } = await getSessionInfo()

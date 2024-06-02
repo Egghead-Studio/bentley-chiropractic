@@ -39,7 +39,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button className={clsx('btn text-nowrap', className, widthClass)} onClick={onClick}>
+    <button className={clsx('btn border-0 text-nowrap text-md', className, widthClass)} onClick={onClick}>
       {children}
     </button>
   )
