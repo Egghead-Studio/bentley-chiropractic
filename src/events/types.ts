@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 */
 export enum EventName {
   PageViewEvent = 'page_view',
   ClickEvent = 'button_click',

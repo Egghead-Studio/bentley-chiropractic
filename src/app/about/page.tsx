@@ -7,6 +7,8 @@ import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTes
 import { WhyGonsteadWorks } from '@/components/WhyGonsteadWorks/WhyGonsteadWorks'
 import { FAQSection } from '@/components/FAQ/FAQ'
 import { WhatSetsMeApart } from '@/components/WhatSetsMeApart/WhatSetsMeApart'
+import { sendEvent } from '@/events/events'
+
 export default async function About() {
   const analyticsClient = new AnalyticsClient()
 
@@ -19,6 +21,7 @@ export default async function About() {
     <WhyGonsteadWorks key={'why-it-works'} />,
     <PatientTestimonials headerText={'Proven results'} key={'testimonials'} />
   ]
+  await sendEvent(EventName.PageViewEvent, { path: '/about' })
 
   return (
     <main>

@@ -1,13 +1,9 @@
 import React from 'react'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
-import { getSessionInfo } from '@/events/session'
+import { sendEvent } from '@/events/events'
 
 export default async function Testimonials() {
-  const analyticsClient = new AnalyticsClient()
-
-  const { ip, sessionID } = await getSessionInfo()
-  analyticsClient.track({ name: EventName.PageViewEvent, properties: { distinct_id: sessionID, path: '/testimonials', ip } })
+  await sendEvent(EventName.PageViewEvent, { path: '/testimonials' })
 
   return (
     <main>

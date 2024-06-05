@@ -1,5 +1,5 @@
 import Mixpanel from 'mixpanel'
-import { AnalyticsEvent } from '@/events/events'
+import { AnalyticsEvent } from '@/events/types'
 import { Singleton } from '@/utils/Singleton'
 
 const MIXPANEL_TOKEN = process.env.MIXPANEL_TOKEN ?? 'no-token'

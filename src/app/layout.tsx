@@ -7,13 +7,13 @@ import clsx from 'clsx'
 import { NextFontWithVariable } from 'next/dist/compiled/@next/font'
 import { AnalyticsProvider } from '@/events/AnalyticsProvider'
 import { getSessionInfo } from '@/events/session'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { Footer } from '@/components/Footer/Footer'
 
 const lora: NextFontWithVariable = Lora({ subsets: ['latin'], variable: '--font-heading' })
 const radioCanada: NextFontWithVariable = Radio_Canada({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
+  icons: '/bentley-logo-square.png',
   title: 'Bentley Chiropractic',
   description: 'Book Your Appointment Today!',
 }

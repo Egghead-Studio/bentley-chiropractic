@@ -1,12 +1,27 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+import { PluginCreator } from 'tailwindcss/types/config'
 
-// Define types for the plugin function arguments
-interface PluginAPI {
-  // eslint-disable-next-line no-unused-vars
-  addUtilities: (utilities: Record<string, any>, options?: { variants?: string[] }) => void;
-  // eslint-disable-next-line no-unused-vars
-  theme: (path: string, defaultValue?: any) => any;
+
+const customPlugin: PluginCreator = ({ addUtilities, theme }) => {
+  addUtilities({
+    '.text-md': {
+      fontSize: '1rem',
+    },
+    '.w-page': {
+      marginLeft: theme('spacing.4'),
+      marginRight: theme('spacing.4'),
+
+      '@screen md': {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: theme('width.10/12'),
+      },
+      '@screen lg': {
+        maxWidth: theme('width.9/12'),
+      },
+    },
+  })
 }
 
 const config: Config = {
@@ -36,23 +51,7 @@ const config: Config = {
   },
   plugins: [
     require('daisyui'),
-    plugin(function ({ addUtilities, theme }: PluginAPI) {
-      addUtilities({
-        '.w-page': {
-          marginLeft: theme('spacing.4'),
-          marginRight: theme('spacing.4'),
-
-          '@screen md': {
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            maxWidth: theme('width.10/12'),
-          },
-          '@screen lg': {
-            maxWidth: theme('width.9/12'),
-          },
-        },
-      })
-    })
+    plugin(customPlugin),
   ],
 }
 export default config
