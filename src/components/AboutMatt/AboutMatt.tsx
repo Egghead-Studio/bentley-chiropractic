@@ -3,11 +3,15 @@ import { LinkButton } from '@/components/Button/LinkButton'
 import { EventName } from '@/events/types'
 import Image from 'next/image'
 
-export const AboutMatt: React.FC = () => {
+interface AboutMattProps {
+  headerText: string
+}
+
+export const AboutMatt: React.FC<AboutMattProps> = ({ headerText }) => {
   return (
     <div className={'flex w-page gap-12 items-center py-12 lg:py-24'}>
       <div className={'flex flex-col gap-4 lg:w-7/12'}>
-        <h2 className={'text-center lg:text-left mb-4 md:mb-8 text-primary font-bold font-heading text-4xl'}>Dr. Matthew Bentley</h2>
+        <h2 className={'text-center lg:text-left mb-4 md:mb-8 text-primary font-bold font-heading text-4xl'}>{headerText}</h2>
         <div className={'flex w-full mb-4 md:justify-center m lg:hidden'}>
           <Image className={'shadow-xl rounded-lg'} src={'/doctor-small.jpeg'} alt={'Dr. Matthew Bentley'} width={500} height={500} />
         </div>
