@@ -6,7 +6,11 @@ interface Question {
   answer: string
 }
 
-export const FAQSection: React.FC = () => {
+interface FAQSectionProps {
+  headerText: string
+}
+
+export const FAQSection: React.FC<FAQSectionProps> = ({ headerText }) => {
   const questions: Question[] = [
     {
       question: 'What is the meaning of life?',
@@ -24,7 +28,7 @@ export const FAQSection: React.FC = () => {
 
   return (
     <div className={'w-page py-12 lg:py-24 flex flex-col gap-8 md:gap-12'}>
-      <div className={'text-primary text-4xl text-center font-bold font-heading'}>Frequently asked questions</div>
+      <div className={'text-primary text-4xl text-center font-bold font-heading'}>{headerText}</div>
       <div className={'flex flex-col gap-4'}>
         {questions.map((q: Question, index: number) => (
           <QuestionAccordion key={`question-${index}`} question={q} />
