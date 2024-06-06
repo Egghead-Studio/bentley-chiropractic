@@ -1,7 +1,5 @@
 import React from 'react'
-import { AnalyticsClient } from '@/events/AnalyticsClient'
 import { EventName } from '@/events/types'
-import { getSessionInfo } from '@/events/session'
 import { AboutMatt } from '@/components/AboutMatt/AboutMatt'
 import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTestimonials'
 import { WhyGonsteadWorks } from '@/components/WhyGonsteadWorks/WhyGonsteadWorks'
