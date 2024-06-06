@@ -10,10 +10,7 @@ import { WhatSetsMeApart } from '@/components/WhatSetsMeApart/WhatSetsMeApart'
 import { sendEvent } from '@/events/events'
 
 export default async function About() {
-  const analyticsClient = new AnalyticsClient()
 
-  const { ip, sessionID } = await getSessionInfo()
-  analyticsClient.track({ name: EventName.PageViewEvent, properties: { distinct_id: sessionID, path: '/about', ip } })
 
   const sections = [
     <WhatSetsMeApart key={'apart'} />,

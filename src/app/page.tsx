@@ -18,7 +18,7 @@ export default async function Home() {
 
   const sections = [
     <HowICanHelp key={'help'} />,
-    <AboutMatt headerText={'Dr. Matthew Bentley'} key={'about'} />,
+    <AboutMatt buttonText={'Learn more about my practice'} headerText={'Dr. Matthew Bentley'} key={'about'} />,
     <WhatToExpect key={'expectations'} />,
     <PatientTestimonials headerText={'What patients say'} key={'testimonials'} />,
     <WhyGonsteadWorks key={'why-it-works'} />,
