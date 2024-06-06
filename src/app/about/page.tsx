@@ -9,20 +9,20 @@ import { sendEvent } from '@/events/events'
 
 export default async function About() {
 
+  await sendEvent(EventName.PageViewEvent, { path: '/about' })
 
   const sections = [
-    <WhatSetsMeApart key={'apart'} />,
+    <WhatSetsMeApart headerText={'What sets me apart'} key={'apart'} />,
     <AboutMatt headerText={'About Dr. Bentley'} key={'about'} />,
     <WhyGonsteadWorks key={'why-it-works'} />,
     <PatientTestimonials headerText={'Proven results'} key={'testimonials'} />
   ]
-  await sendEvent(EventName.PageViewEvent, { path: '/about' })
 
   return (
     <main>
       <div>
         {sections && sections.map((section, index) => <div className={index % 2 === 0 ? 'bg-transparent' : 'bg-secondary'} key={index}>{section}</div>)}
-        <FAQSection key={'faq'} />
+        <FAQSection headerText={'Frequently asked questions'} key={'faq'} />
       </div>
     </main>
   )

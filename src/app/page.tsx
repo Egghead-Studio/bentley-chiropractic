@@ -19,7 +19,7 @@ export default async function Home() {
   const sections = [
     <HowICanHelp key={'help'} />,
     <AboutMatt buttonText={'Learn more about my practice'} headerText={'Dr. Matthew Bentley'} key={'about'} />,
-    <WhatToExpect key={'expectations'} />,
+    <WhatToExpect headerText={'What to expect'} key={'expectations'} />,
     <PatientTestimonials headerText={'What patients say'} key={'testimonials'} />,
     <WhyGonsteadWorks key={'why-it-works'} />,
 
@@ -30,7 +30,7 @@ export default async function Home() {
       <div>
         <HeroSection/>
         {sections && sections.map((section, index) => <div className={index % 2 === 0 ? 'bg-transparent' : 'bg-secondary'} key={index}>{section}</div>)}
-        <FAQSection key={'faq'} />
+        <FAQSection headerText={'Frequently asked questions'} key={'faq'} />
       </div>
     </main>
   )
