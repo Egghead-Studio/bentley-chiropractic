@@ -16,7 +16,7 @@ export default async function ServicePage({ params }: { params: PageParams }) {
 
   const sections = [
 
-    <MainSection imagePath={'/headache.jpg'} items={sectionTextMap[serviceName]}/>,
+    <MainSection key={'main-section'} imagePath={'/headache.jpg'} items={sectionTextMap[serviceName]}/>,
     <PatientTestimonials headerText={'People I\'ve been able to help'}  key={'testimonials'} />
   ]
 

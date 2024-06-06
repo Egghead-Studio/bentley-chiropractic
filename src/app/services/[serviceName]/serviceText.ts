@@ -1,7 +1,10 @@
 
 export enum TextType {
+  // eslint-disable-next-line no-unused-vars
   H1 = 'h1',
+  // eslint-disable-next-line no-unused-vars
   H2 = 'h2',
+  // eslint-disable-next-line no-unused-vars
   P = 'p',
 }
 export interface SectionText {
