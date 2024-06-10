@@ -13,16 +13,16 @@ interface FAQSectionProps {
 export const FAQSection: React.FC<FAQSectionProps> = ({ headerText }) => {
   const questions: Question[] = [
     {
-      question: 'What is the meaning of life?',
-      answer: '42'
+      question: 'Do you accept insurance?',
+      answer: 'We are in-network with Medicare.'
     },
     {
-      question: 'What is the airspeed velocity of an unladen swallow?',
-      answer: 'African or European?'
+      question: 'How much do appointments cost?',
+      answer: 'New patient appointments are $75. This includes history, examinations, x-ray referral, and your first adjustment. All appointments after that are $50.'
     },
     {
-      question: 'What is the best way to get to Carnegie Hall?',
-      answer: 'Practice, practice, practice'
+      question: 'Do you offer any discounts?',
+      answer: 'Yes! We offer a 20% discount for new patients who book online. We also offer a free appointment to anyone who refers a new patient who completes their first appointment.'
     }
   ]
 

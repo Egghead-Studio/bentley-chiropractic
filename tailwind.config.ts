@@ -15,9 +15,12 @@ const customPlugin: PluginCreator = ({ addUtilities, theme }) => {
       '@screen md': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        maxWidth: theme('width.10/12'),
+        maxWidth: theme('width.11/12'),
       },
       '@screen lg': {
+        maxWidth: theme('width.11/12'),
+      },
+      '@screen xl': {
         maxWidth: theme('width.9/12'),
       },
     },

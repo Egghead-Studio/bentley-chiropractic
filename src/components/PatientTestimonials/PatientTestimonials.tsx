@@ -56,8 +56,9 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({ header
           href={'/new-patients'}
           eventName={EventName.BookAppointment}
           eventProperties={{ item: 'patient-testimonials-button' }}
+          newTab={false}
         >
-        Get our new-patient special
+          Get our new-patient special
         </LinkButton>
       </div>
     </div>

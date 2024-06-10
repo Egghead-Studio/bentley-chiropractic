@@ -5,6 +5,10 @@ import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTes
 import { MainSection } from '@/components/MainSection/MainSection'
 import { sectionTextMap } from '@/app/services/[serviceName]/serviceText'
 
+export const metadata = {
+  title: 'Services | Bentley Chiropractic',
+}
+
 interface PageParams {
   serviceName: string
 }

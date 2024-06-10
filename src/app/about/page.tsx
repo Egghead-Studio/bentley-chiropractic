@@ -7,6 +7,10 @@ import { FAQSection } from '@/components/FAQ/FAQ'
 import { WhatSetsMeApart } from '@/components/WhatSetsMeApart/WhatSetsMeApart'
 import { sendEvent } from '@/events/events'
 
+export const metadata = {
+  title: 'About Dr. Matthew Bentley | Bentley Chiropractic',
+}
+
 export default async function About() {
 
   await sendEvent(EventName.PageViewEvent, { path: '/about' })
