@@ -6,6 +6,10 @@ import { PatientTestimonials } from '@/components/PatientTestimonials/PatientTes
 import { WhatToExpect } from '@/components/WhatToExpect/WhatToExpect'
 import { WhatSetsMeApart } from '@/components/WhatSetsMeApart/WhatSetsMeApart'
 
+export const metadata = {
+  title: 'Services | Bentley Chiropractic',
+}
+
 export default async function Services() {
   await sendEvent(EventName.PageViewEvent, { path: '/services' })
 

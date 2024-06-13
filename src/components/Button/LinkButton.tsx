@@ -9,12 +9,21 @@ interface LinkButtonProps extends ButtonProps {
   eventName: EventName;
   eventProperties: Record<string, string>;
   children: React.ReactNode;
+  newTab?: boolean;
 }
 
-export const LinkButton: React.FC<LinkButtonProps> = ({ href, eventName, eventProperties, variant, stretch, children }) => {
+export const LinkButton: React.FC<LinkButtonProps> = ({
+  href,
+  eventName,
+  eventProperties,
+  variant,
+  stretch,
+  newTab = true,
+  children
+}) => {
   const onClick = () => {
     void sendEvent(eventName, eventProperties)
-    window.open(href, '_blank')
+    window.open(href, newTab ? '_blank' : '_self')
   }
 
   return (
