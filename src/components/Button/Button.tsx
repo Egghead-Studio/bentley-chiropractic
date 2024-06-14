@@ -1,6 +1,5 @@
 import React from 'react'
 import clsx from 'clsx'
-import { usePathname } from 'next/navigation'
 
 export enum ButtonVariant {
   // eslint-disable-next-line no-unused-vars
