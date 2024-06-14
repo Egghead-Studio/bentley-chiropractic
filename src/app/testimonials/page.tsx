@@ -11,9 +11,9 @@ export default async function Testimonials() {
 
   return (
     <main>
-      <h1>
+      <div>
         Testimonials
-      </h1>
+      </div>
     </main>
   )
 }

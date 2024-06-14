@@ -1,7 +1,7 @@
 import React from 'react'
 import { EventName } from '@/events/types'
 import { LinkButton } from '@/components/Button/LinkButton'
-import heroImage from '@/../public/hero-image.jpg'
+import heroImage from '@/../public/watercolor.jpg'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -77,6 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({
           'lg:w-6/12 aspect-video flex-shrink-0 rounded-lg overflow-hidden shadow-lg',
           {
             'hidden': variant === HeroSectionVariant.ImageBackground,
+            'hidden lg:flex': variant !== HeroSectionVariant.ImageBackground,
             'flex': variant !== HeroSectionVariant.ImageBackground
           }
         )
