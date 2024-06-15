@@ -7,6 +7,7 @@ export const getIP = (): string => {
 
   if (forwardedFor) {
     console.log('forwardedFor', forwardedFor)
+    console.log('first forwardedFor', forwardedFor.split(',')[0])
     return forwardedFor.split(',')[0] ?? fallback
   }
 

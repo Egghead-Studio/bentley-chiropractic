@@ -8,7 +8,7 @@ export class AnalyticsClient extends Singleton<Mixpanel.Mixpanel> {
   constructor() {
     super('analyticsClient')
     if (!this.value) {
-      this.value = Mixpanel.init(MIXPANEL_TOKEN, { geolocate: true })
+      this.value = Mixpanel.init(MIXPANEL_TOKEN, { geolocate: false })
     }
   }
 

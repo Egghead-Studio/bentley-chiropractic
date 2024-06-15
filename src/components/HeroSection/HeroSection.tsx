@@ -1,7 +1,6 @@
 import React from 'react'
 import { EventName } from '@/events/types'
 import { LinkButton } from '@/components/Button/LinkButton'
-import heroImage from '@/../public/watercolor-removebg-preview-blue.jpg'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -44,17 +43,14 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({
     <div
       className={
         clsx(
-          'py-6 lg:py-12 xl:py-24 bg-cover',
+          'pt-4 pb-24 lg:py-12 xl:py-24 bg-cover bg-center xl:bg-left',
           {
             'w-page': variant !== HeroSectionVariant.ImageBackground,
             'flex': variant !== HeroSectionVariant.ImageBackground,
+            'bg-[url(/watercolor-removebg-preview-blue-sm.jpg)] md:bg-[url(/watercolor-removebg-preview-blue-md.jpg)] lg:bg-[url(/watercolor-removebg-preview-blue.jpg)]': variant === HeroSectionVariant.ImageBackground,
           }
         )
       }
-      style={{
-        backgroundImage: variant === HeroSectionVariant.ImageBackground
-          ? `url(${heroImage.src})` : ''
-      }}
     >
       <div className="flex flex-col gap-4 mx-auto py-20 w-page">
         <h1 className="text-4xl font-bold text-primary font-heading">{formattedHeadingText}</h1>
