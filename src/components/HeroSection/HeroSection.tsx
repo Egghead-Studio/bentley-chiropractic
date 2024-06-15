@@ -1,7 +1,7 @@
 import React from 'react'
 import { EventName } from '@/events/types'
 import { LinkButton } from '@/components/Button/LinkButton'
-import heroImage from '@/../public/watercolor.jpg'
+import heroImage from '@/../public/watercolor-removebg-preview-blue.jpg'
 import Image from 'next/image'
 import clsx from 'clsx'
 

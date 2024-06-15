@@ -38,17 +38,17 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({ header
           </div>)}
         />
 
-        <Card
-          headerText={'Ashley K.'}
-          bodyText={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'}
-          review={(<div className={'flex'}>
-            <Star className={'fill-secondary-dark text-secondary-dark'} />
-            <Star className={'fill-secondary-dark text-secondary-dark'} />
-            <Star className={'fill-secondary-dark text-secondary-dark'} />
-            <Star className={'fill-secondary-dark text-secondary-dark'} />
-            <Star className={'fill-secondary-dark text-secondary-dark'} />
-          </div>)}
-        />
+        {/*<Card*/}
+        {/*  headerText={'Ashley K.'}*/}
+        {/*  bodyText={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'}*/}
+        {/*  review={(<div className={'flex'}>*/}
+        {/*    <Star className={'fill-secondary-dark text-secondary-dark'} />*/}
+        {/*    <Star className={'fill-secondary-dark text-secondary-dark'} />*/}
+        {/*    <Star className={'fill-secondary-dark text-secondary-dark'} />*/}
+        {/*    <Star className={'fill-secondary-dark text-secondary-dark'} />*/}
+        {/*    <Star className={'fill-secondary-dark text-secondary-dark'} />*/}
+        {/*  </div>)}*/}
+        {/*/>*/}
 
       </div>
       <div className="flex justify-center my-16">
