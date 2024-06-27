@@ -4,6 +4,20 @@ export async function middleware(req: NextRequest) {
   const requestCookies = req.cookies
   const requestHeaders = new Headers(req.headers)
 
+  // Add the current path and referrer so that the Analytics helpers can pull it.
+  requestHeaders.set('x-current-path', req.nextUrl.pathname)
+
+  const referrer = req.headers.get('referer') || '/'
+  const referrerURL = referrer.split('?')[0]
+  requestHeaders.set('x-referred-by', referrerURL || '/')
+
+  // Add UTM data to the request headers
+  requestHeaders.set('x-utm-source', req.nextUrl.searchParams.get('utm_source') || '')
+  requestHeaders.set('x-utm-medium', req.nextUrl.searchParams.get('utm_medium') || '')
+  requestHeaders.set('x-utm-campaign', req.nextUrl.searchParams.get('utm_campaign') || '')
+  requestHeaders.set('x-utm-content', req.nextUrl.searchParams.get('utm_content') || '')
+  requestHeaders.set('x-utm-term', req.nextUrl.searchParams.get('utm_term') || '')
+
   // Create a session ID if it doesn't exist
   let sessionID = requestCookies.get('sessionID')?.value || ''
   if (!sessionID) {

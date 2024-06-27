@@ -4,6 +4,8 @@ export enum EventName {
   ClickEvent = 'button_click',
   ViewEvent = 'view_event',
   BookAppointment = 'book_appointment',
+  NewPatientsPageView = 'new_patients_page_view',
+  FAQExpanded = 'faq_expanded',
 }
 
 export interface EventProperties {

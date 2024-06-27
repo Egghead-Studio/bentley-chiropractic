@@ -61,6 +61,7 @@ export const Nav: React.FC<NavProps> = () => {
                 href={URLMap[ExternalURL.Booking]}
                 eventName={EventName.BookAppointment}
                 eventProperties={{ item: 'nav-bar' }}
+                newTab
               >
                 Book Now
               </LinkButton>
@@ -82,6 +83,7 @@ export const Nav: React.FC<NavProps> = () => {
                 href={URLMap[ExternalURL.Booking]}
                 eventName={EventName.BookAppointment}
                 eventProperties={{ item: 'nav-bar' }}
+                newTab
               >
                 Book Now
               </LinkButton>

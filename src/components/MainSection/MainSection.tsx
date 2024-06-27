@@ -26,8 +26,8 @@ export const MainSection: React.FC<MainSectionProps> = ({ imagePath, items }) =>
         ))}
         <LinkButton
           href={'/new-patients'}
-          eventName={EventName.BookAppointment}
-          eventProperties={{ item: 'set-apart-button' }}
+          eventName={EventName.NewPatientsPageView}
+          eventProperties={{ item: 'long-form-text' }}
         >
           Get Relief Now
         </LinkButton>

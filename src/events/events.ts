@@ -11,14 +11,15 @@ const ENVIRONMENT = process.env.NODE_ENV
 
 export const sendEvent = async (name: EventName, properties: Record<string, string >) => {
   const client = new AnalyticsClient()
-  const { ip, sessionID } = await getSessionInfo()
+  const { sessionId, currentPath, ...sessionInfo } = await getSessionInfo()
   client.track({
     name: name,
     properties: {
-      distinct_id: sessionID,
+      distinct_id: sessionId,
       environment: ENVIRONMENT,
-      ip,
-      path: '/', // This must be overwritten by the caller
-      ...properties }
+      path: currentPath, // This must be overwritten by the caller
+      ...sessionInfo,
+      ...properties,
+    }
   })
 }

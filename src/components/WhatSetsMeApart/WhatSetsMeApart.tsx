@@ -30,8 +30,8 @@ export const WhatSetsMeApart: React.FC<WhatSetsMeApartProps> = ({ headerText }) 
       <div className="flex justify-center my-10">
         <LinkButton
           href={'/new-patients'}
-          eventName={EventName.BookAppointment}
-          eventProperties={{ item: 'set-apart-button' }}
+          eventName={EventName.NewPatientsPageView}
+          eventProperties={{ item: 'what-sets-me-apart' }}
           newTab={false}
         >
           Become a patient

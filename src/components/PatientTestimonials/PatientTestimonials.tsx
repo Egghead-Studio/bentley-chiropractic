@@ -54,9 +54,8 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({ header
       <div className="flex justify-center my-16">
         <LinkButton
           href={'/new-patients'}
-          eventName={EventName.BookAppointment}
+          eventName={EventName.NewPatientsPageView}
           eventProperties={{ item: 'patient-testimonials-button' }}
-          newTab={false}
         >
           Get our new-patient special
         </LinkButton>

@@ -27,7 +27,6 @@ export const AboutMatt: React.FC<AboutMattProps> = ({ headerText, buttonText }) 
               href={'/about'}
               eventName={EventName.ClickEvent}
               eventProperties={{ item: 'about-matt-button' }}
-              newTab={false}
             >
               Learn more about my practice
             </LinkButton>

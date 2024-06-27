@@ -29,7 +29,7 @@ export default async function NewPatientsPage() {
           buttonText={'Schedule now'}
           buttonLink={URLMap[ExternalURL.Booking]}
           headingText={'Book online to get\n20% off your first visit'}
-          bodyText={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec elit ultricies ultricies.'}
+          bodyText={'Begin your journey today and let Bentley Chiropractic help you function to your fullest potential.'}
           imageSrc={'/hero-image.jpg'}
           imageAltText={'Chiropractor adjusting patient'}
         />

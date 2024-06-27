@@ -3,6 +3,8 @@ import React from 'react'
 import { Question } from '@/components/FAQ/types'
 import { Minus, Plus } from 'react-feather'
 import clsx from 'clsx'
+import { EventName } from '@/events/types'
+import { sendEvent } from '@/events/events'
 
 interface QuestionAccordionProps {
   question: Question
@@ -12,6 +14,16 @@ export const QuestionAccordion: React.FC<QuestionAccordionProps> = ({ question }
   const [open, setOpen] = React.useState(false)
 
   const toggleOpen = () => {
+    // Send event when FAQ is expanded
+    if (!open) {
+      void sendEvent(
+        EventName.FAQExpanded,
+        {
+          question: question.question,
+        }
+      )
+    }
+
     setOpen(!open)
   }
 

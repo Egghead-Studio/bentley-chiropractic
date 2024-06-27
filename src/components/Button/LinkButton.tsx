@@ -19,7 +19,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
   eventProperties,
   variant,
   stretch,
-  newTab = true,
+  newTab = false,
   children
 }) => {
   const path = usePathname()

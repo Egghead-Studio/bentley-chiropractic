@@ -22,19 +22,19 @@ export const HowICanHelp: React.FC = () => {
           // learnMoreLink={'/services/enhance-immune-system'}
         />
         <Card
-          headerText={'Improve function'}
-          bodyText={'Chiropractic care can directly impact organ function by making the nervous system more efficient.'}
-          // learnMoreLink={'/services/improve-function'}
+          headerText={'Smooth digestion'}
+          bodyText={'All health and disease start in the gut! We can aid your body\'s ability to absorb nutrients - helping with IBS, acid reflux, nausea, indigestion, and more.'}
+          // learnMoreLink={'/services/digestion'}
         />
         <Card
-          headerText={'Find the root cause'}
-          bodyText={'We don\'t just address symptoms - we aim to find the reason your body is out of balance and to restore that balance.'}
-          // learnMoreLink={'/services/address-root-cause'}
+          headerText={'Headache relief'}
+          bodyText={'There are many types of headaches and they\'re all treated differently. We can help you find relief from migraines, digestive headaches, and hormonal headaches.'}
+          // learnMoreLink={'/services/headache-relief'}
         />
         <Card
-          headerText={'Common symptoms'}
-          bodyText={'Plenty of symptoms may seem "normal", but they\'re actually just common. We help restore your body so it functions at its best.'}
-          // learnMoreLink={'/services/common-symptoms'}
+          headerText={'Neurological function'}
+          bodyText={'Many complex neurological conditions can be improved by resolving nerve irritation, including Bell\'s Palsy, trigeminal neuralgia, epilepsy, and diabetic neuropathy.'}
+          // learnMoreLink={'/services/neurological-function'}
         />
       </div>
     </div>

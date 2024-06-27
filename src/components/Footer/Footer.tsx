@@ -69,7 +69,10 @@ export const Footer: React.FC = () => {
 
               <div className={'flex flex-col pb-8'}>
                 <div className={'text-xl text-primary font-heading font-semibold mb-4'}>Hours</div>
-                <div><b>M-F</b> 9:00 AM - 4:00 PM</div>
+                <div><b>Tuesday</b> 8:00 AM - 11:00 AM</div>
+                <div><b>Wednesday</b> 8:00 AM - 6:00 PM</div>
+                <div><b>Thursday</b> 12:00 PM - 6:00 PM</div>
+                <div><b>Friday</b> 8:00 AM - 11:00 AM</div>
               </div>
             </div>
           </div>
