@@ -23,7 +23,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { ip, sessionID } = await getSessionInfo()
+  const { ip, sessionId } = await getSessionInfo()
 
   return (
     <html lang="en">
@@ -36,7 +36,7 @@ export default async function RootLayout({
         )
       }
       >
-        <AnalyticsProvider ip={ip} sessionID={sessionID}>
+        <AnalyticsProvider ip={ip} sessionID={sessionId}>
           <Nav/>
           <div>
             {children}
