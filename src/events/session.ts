@@ -74,6 +74,18 @@ export const getSessionInfo = async (): Promise<SessionData> => {
     utm_term
   } = utmData
 
+  console.log('Session info', {
+    sessionId,
+    ip,
+    currentPath,
+    referredBy,
+    utm_source,
+    utm_medium,
+    utm_campaign,
+    utm_content,
+    utm_term
+  })
+
 
   return {
     sessionId: sessionId as SessionId,
