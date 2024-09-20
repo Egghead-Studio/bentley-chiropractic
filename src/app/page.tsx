@@ -57,7 +57,7 @@ export default async function Home() {
           buttonText={'Get our new patient special'}
           buttonLink={'/new-patients'}
           headingText={'A new level of care'}
-          bodyText={'Bentley Chiropractic gives the body what it needs to function to its fullest potential. We don\'t just mask the problem - we aim find the root cause of your pain and dysfunction so we can provide a natural alternative to health care.'}
+          bodyText={'Bentley Chiropractic gives the body what it needs to function to its fullest potential. We don\'t just mask the problem - we aim to find the root cause of your pain and dysfunction so we can provide a natural alternative to health care.'}
           imageSrc={'/watercolor-removebg-preview.jpg'}
           imageAltText={'Chiropractor adjusting patient'}
         />
