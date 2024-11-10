@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardProps } from '@/components/Card/Card'
+import { FadeIn } from '@/components/FadeIn/FadeIn'
 
 interface WhatToExpectProps {
   headerText: string
@@ -29,20 +30,21 @@ export const WhatToExpect: React.FC<WhatToExpectProps> = ({ headerText }) => {
   ]
 
   return (
-    <div className={'bg-transparent w-page py-12 lg:py-24'}>
-      <h2 className={'text-primary text-4xl font-heading font-bold text-center mb-8 md:mb-12'}>{headerText}</h2>
-      <div className={'flex flex-col xl:flex-row gap-4 xl:gap-8'}>
-        {cards.map((card: CardProps) => (
-          <Card
-            key={card.headerText}
-            headerText={card.headerText}
-            bodyText={card.bodyText}
-            learnMoreLink={card.learnMoreLink}
-            imageURL={card.imageURL}
-          />
-        ))}
+    <FadeIn>
+      <div className={'bg-transparent w-page py-12 lg:py-24'}>
+        <h2 className={'text-primary text-4xl font-heading font-bold text-center mb-8 md:mb-12'}>{headerText}</h2>
+        <div className={'flex flex-col xl:flex-row gap-4 xl:gap-8'}>
+          {cards.map((card: CardProps) => (
+            <Card
+              key={card.headerText}
+              headerText={card.headerText}
+              bodyText={card.bodyText}
+              learnMoreLink={card.learnMoreLink}
+              imageURL={card.imageURL}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-
+    </FadeIn>
   )
 }

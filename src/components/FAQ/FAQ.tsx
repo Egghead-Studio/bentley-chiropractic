@@ -1,5 +1,6 @@
 import React from 'react'
 import { QuestionAccordion } from '@/components/FAQ/QuestionAccordion'
+import { FadeIn } from '@/components/FadeIn/FadeIn'
 
 interface Question {
   question: string
@@ -27,13 +28,15 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ headerText }) => {
   ]
 
   return (
-    <div className={'w-page py-12 lg:py-24 flex flex-col gap-8 md:gap-12'}>
-      <div className={'text-primary text-4xl text-center font-bold font-heading'}>{headerText}</div>
-      <div className={'flex flex-col gap-4'}>
-        {questions.map((q: Question, index: number) => (
-          <QuestionAccordion key={`question-${index}`} question={q} />
-        ))}
+    <FadeIn>
+      <div className={'w-page py-12 lg:py-24 flex flex-col gap-8 md:gap-12'}>
+        <div className={'text-primary text-4xl text-center font-bold font-heading'}>{headerText}</div>
+        <div className={'flex flex-col gap-4'}>
+          {questions.map((q: Question, index: number) => (
+            <QuestionAccordion key={`question-${index}`} question={q} />
+          ))}
+        </div>
       </div>
-    </div>
+    </FadeIn>
   )
 }
