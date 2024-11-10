@@ -32,7 +32,7 @@ export const HowICanHelp: React.FC = () => {
           // learnMoreLink={'/services/headache-relief'}
         />
         <Card
-          headerText={'Neurological function'}
+          headerText={'Nerve function'}
           bodyText={'Many complex neurological conditions can be improved by resolving nerve irritation, including Bell\'s Palsy, trigeminal neuralgia, epilepsy, and diabetic neuropathy.'}
           // learnMoreLink={'/services/neurological-function'}
         />
