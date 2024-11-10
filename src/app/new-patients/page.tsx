@@ -30,7 +30,7 @@ export default async function NewPatientsPage() {
           buttonLink={URLMap[ExternalURL.Booking]}
           headingText={'Book online to get\n20% off your first visit'}
           bodyText={'Begin your journey today and let Bentley Chiropractic help you function to your fullest potential.'}
-          imageSrc={'/hero-image.jpg'}
+          imageSrc={'/adjustment-top.jpeg'}
           imageAltText={'Chiropractor adjusting patient'}
         />
         {sections && sections.map((section, index) => <div className={index % 2 === 1 ? 'bg-transparent' : 'bg-secondary'} key={index}>{section}</div>)}

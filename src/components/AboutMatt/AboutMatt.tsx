@@ -13,8 +13,10 @@ export const AboutMatt: React.FC<AboutMattProps> = ({ headerText, buttonText }) 
     <div className={'flex w-page gap-12 items-center py-12 lg:py-24'}>
       <div className={'flex flex-col gap-4 lg:w-7/12'}>
         <h2 className={'text-center lg:text-left mb-4 md:mb-8 text-primary font-bold font-heading text-4xl'}>{headerText}</h2>
-        <div className={'flex w-full mb-4 md:justify-center m lg:hidden'}>
-          <Image className={'shadow-xl rounded-lg'} src={'/matt-small.jpeg'} alt={'Dr. Matthew Bentley'} width={500} height={500} />
+        <div className={'flex w-full mb-4 justify-center lg:hidden'}>
+          <div className={'aspect-square overflow-hidden rounded-lg shadow-xl'}>
+            <Image className={'filter saturate-[1.2] brightness-105'} src={'/portrait.jpeg'} alt={'Dr. Matthew Bentley'} width={500} height={500} />
+          </div>
         </div>
         <p>I was born and raised in Grapevine, TX, which is a suburb in the Dallas-Ft. Worth metropolitan area.</p>
         <p>I became the first person in my family to graduate from college in 2018 when I earned my a bachelor&apos;s degree in Exercise Science from Harding University in Searcy, AR. Afterward, I followed my wife, Liz, to Syracuse, NY so that she could pursue a master&apos;s degree.</p>
@@ -33,7 +35,7 @@ export const AboutMatt: React.FC<AboutMattProps> = ({ headerText, buttonText }) 
           </div> )}
       </div>
       <div className={'w-5/12 hidden lg:flex'}>
-        <Image className={'shadow-xl rounded-lg'} src={'/matt.jpeg'} alt={'Dr. Matthew Bentley'} width={500} height={500} />
+        <Image className={'shadow-xl rounded-lg filter saturate-[1.2] brightness-105'} src={'/portrait.jpeg'} alt={'Dr. Matthew Bentley'} width={500} height={500} />
       </div>
     </div>
   )
