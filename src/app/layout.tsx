@@ -1,5 +1,4 @@
 import React from 'react'
-import sal from 'sal.js'
 import type { Metadata } from 'next'
 import { Lora, Radio_Canada } from 'next/font/google'
 import './globals.css'
@@ -25,7 +24,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { ip, sessionId } = await getSessionInfo()
-  sal()
 
   return (
     <html lang="en">
